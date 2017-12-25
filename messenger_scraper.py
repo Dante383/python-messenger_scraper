@@ -15,7 +15,7 @@ from pprint import pprint
 def downloadImage (author_uid, url, conversation_id, client):
 	# first, let's check author's name
 	user = client.fetchUserInfo(author_uid)[author_uid]
-	filename = ntpath.basename(url)
+	filename = ntpath.basename(url).split('?')[0]
 
 	user.name = user.name.encode('utf-8')
 	
