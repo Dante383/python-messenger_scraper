@@ -38,13 +38,15 @@ def downloadImage (author_uid, url, conversation_id, client):
 	
 
 def main ():
-	if len(sys.argv) < 2: 
-		print('Usage: python messenger_scraper.py conversation_id')
+	if len(sys.argv) < 4: 
+		print('Usage: python messenger_scraper.py facebook_username facebook_password conversation_id')
 		return False
 
-	conversation_id = sys.argv[1]
+	facebook_username = sys.argv[1]
+	facebook_password = sys.argv[2]
+	conversation_id = sys.argv[3]
 
-	client = Client(your username, your password)
+	client = Client(facebook_username, facebook_password)
 	print('Attempting {}...'.format(conversation_id))
 	# what the fuck fbchat, where is function to retrieve all images?
 	# ehh I have to do everything by myself
